@@ -8,13 +8,18 @@ namespace R5T.F0048
 	[FunctionalityMarker]
 	public partial interface ISolutionNameOperator : IFunctionalityMarker
 	{
-		public string AdjustSolutionName_ForPrivacy(string unadjustedSolutionName, bool isPrivate)
+		public string Adjust_Name_ForPrivacy(
+			string unadjustedSolutionName,
+			bool isPrivate)
 		{
-			var output = Instances.NameOperator.AdjustNameForPrivacy(unadjustedSolutionName, isPrivate);
+			var output = Instances.NameOperator.AdjustNameForPrivacy(
+				unadjustedSolutionName,
+				isPrivate);
+
 			return output;
 		}
 
-		public string AppendToken(
+		public string Append_Token(
 			string solutionName,
 			string token)
         {
@@ -24,9 +29,9 @@ namespace R5T.F0048
 			return output;
         }
 
-		public string GetConstructionSolutionName(string solutionName)
+		public string Get_ConstructionSolutionName(string solutionName)
 		{
-			var constructionSolutionName = this.AppendToken(
+			var constructionSolutionName = this.Append_Token(
 				solutionName,
 				Instances.SolutionNameTokens.Construction);
 
@@ -38,6 +43,13 @@ namespace R5T.F0048
 			var tokenSeparator = Instances.Strings.Period;
 			return tokenSeparator;
         }
+
+		public string Get_SolutionName(string libraryName)
+		{
+			// The solution name is just the library name.
+			var output = libraryName;
+			return output;
+		}
 
 		public string GetUnadjustedSolutionName_FromUnadjustedLibraryName(string unadjustedLibraryName)
 		{
