@@ -8,6 +8,7 @@ namespace R5T.F0048
 	[ValuesMarker]
 	public partial interface ISolutionNameTokens : IValuesMarker
 	{
-		public string Construction => Instances.NameTokens.Construction;
-	}
+        /// <inheritdoc cref="F0044.INameTokens.Construction"/>
+        public string Construction => Instances.NameTokens.Construction;
+    }
 }

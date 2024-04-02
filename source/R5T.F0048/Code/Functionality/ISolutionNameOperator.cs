@@ -29,7 +29,7 @@ namespace R5T.F0048
 			return output;
         }
 
-		public string Get_ConstructionSolutionName(string solutionName)
+        public string Get_ConstructionSolutionName(string solutionName)
 		{
 			var constructionSolutionName = this.Append_Token(
 				solutionName,
@@ -38,7 +38,7 @@ namespace R5T.F0048
 			return constructionSolutionName;
 		}
 
-		public string GetTokenSeparator()
+        public string GetTokenSeparator()
         {
 			var tokenSeparator = Instances.Strings.Period;
 			return tokenSeparator;
